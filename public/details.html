@@ -39,11 +39,10 @@
         <h1 class="display-3 text-center">West Hartford Cares</h1>
     </header>
 
-    <!--dropdown/search buttons-->
     <main>
         <div class="container">
             <h2 class="text-center" id="TeamName">&nbsp;</h2>
-            <!--card deck that includes (here) the dynamically created list of services-->
+            <!--card deck that includes (here) the dynamically created card with manager info-->
             <div class="card-deck">
                 <div class="card">
                     <div class="card-body" id="teamManager">
@@ -53,7 +52,7 @@
                         <p class="card-text" id="ManagerEmail">&nbsp;</p>
                     </div>
                 </div>
-                <!--(here) the dynamically created card with the spa service details on it-->
+                <!--(here) the dynamically created card with the team details-->
                 <div class="card">
                     <div class="card-body" id="teamDetails">
                         <h4 class="card-title text-center">Team Details</h4>
@@ -63,32 +62,35 @@
                         <p class="card-text" id="TeamGender">&nbsp;</p>
                     </div>
                 </div>
-                <!--(here) the dynamically created card with a picture for each service-->
             </div>
+
+            <!--dynamically created table with member's info-->
             <div id="teamMembers"></div>
             <table id="memberTable" class="table table-bordered table-striped">
-                    <thead>
-                        <tr>
-                            <th>Volunteer's Name</th>
-                            <th>Contact</th>
-                            <th>Email</th>
-                            <th>Phone</th>
-                            <th>Age</th>
-                            <th>Gender</th>
-                        </tr>
-                    </thead>
-                    <tbody id="memberTableBody">
-                    </tbody>
-                </table>
-            <button type="button" class="btn btn-light blueBackground" id="addTeam" href="#">Sign Me Up!</button>
+                <thead>
+                    <tr>
+                        <th>Volunteer's Name</th>
+                        <th>Contact</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Age</th>
+                        <th>Gender</th>
+                    </tr>
+                </thead>
+                <tbody id="memberTableBody">
+                </tbody>
+            </table>
+
+            <!--buttons to sign up and go back-->
+            <a class="btn btn-light blueBackground" id="addTeam" href="#">Sign Me Up!</a>
+            <a class="btn btn-secondary" id="backToTeams" href="#">Back to Teams</a>
         </div>
     </main>
 
     <!--footer-->
     <footer class="text-right">
         <hr>
-        <p>West Hartford Cares was created by Michelle Harrop as part of HartCode 2019. If this type of site already
-            exists, she was not aware of it before this project.</p>
+        <p>West Hartford Cares was created by Michelle Harrop as part of HartCode 2019.</p>
     </footer>
 
     <!-- Optional JavaScript -->

@@ -21,13 +21,13 @@ $(function ()
         //$("#register").prop("href", "register.html?teamId=" + team.CourseId);
     });
 
-    /* this links the back to details page button and sends it back to the details page for that course
-    $("#backToDetails").on("click", function ()
+    //this links the back to teams page 
+    $("#backToTeams").on("click", function ()
     {
-        $("#backToDetails").prop("href", "search.html");
+        $("#backToTeams").prop("href", "search.html");
     });
 
-    //this links to the edit course page associated with the specific course
+    /*this links to the edit course page associated with the specific course
     $("#editClass").on("click", function ()
     {
         $("#editClass").prop("href", "editcourse.html?courseId=" + team.CourseId);
