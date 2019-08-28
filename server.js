@@ -186,6 +186,10 @@ app.get("/details.html", function (req, res) {
     res.sendFile( __dirname + "/public/" + "details.html" );
 })
 
+app.get("/about.html", function (req, res) {
+    res.sendFile( __dirname + "/public/" + "about.html" );
+})
+
 // TODO:  YOU WILL NEED TO ADD MORE CALLS TO app.get() FOR EACH PAGE
 //        YOU END UP BUILDING
 
