@@ -48,8 +48,8 @@
 		"ManagerPhone": "973-987-6543",
 		"ManagerEmail": "jennyb@gmail.com",
         "MaxTeamMembers": 20,
-        "MinAge": 13,
-		"MaxAge": 19,
+        "MinMemberAge": 13,
+		"MaxMemberAge": 19,
 		"TeamGender": "Any",
 		"Members": [
 			{
@@ -89,8 +89,8 @@
 		"ManagerPhone": "732-817-4567",
 		"ManagerEmail": "joanharrop@gmail.com",
         "MaxTeamMembers": 15,
-        "MinAge": 60,
-		"MaxAge": 100,
+        "MinMemberAge": 60,
+		"MaxMemberAge": 100,
 		"TeamGender": "Any",
 		"Members": [
 			{
