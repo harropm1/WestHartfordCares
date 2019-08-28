@@ -36,6 +36,8 @@ $(function ()
 
 function insertData(team)
 {
+    $("#TeamName").html(team.TeamName);
+
     $("#ManagerName").html("Manager's Name: " + team.ManagerName);
     $("#ManagerPhone").html("Manager's Phone Number: " + team.ManagerPhone);
     $("#ManagerEmail").html("Manager's Email: " + team.ManagerEmail)
