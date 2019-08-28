@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!--My favicon and css-->
+    <link rel="icon" href="images/hands-favicon.png">
+    <link rel="stylesheet" href="styles/site.css">
+    <link rel="stylesheet" href="styles/search.css">
+
+    <title>Livingston Community Center</title>
+</head>
+
+<body>
+    <!--nav bar-->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+        <a class="navbar-brand" href="index.html">Home</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+            aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="search.html">Look for Volunteer Opportunities</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <header>
+        <h1 class="display-3 text-center">West Hartford Cares</h1>
+    </header>
+
+    <!--dropdown/search buttons-->
+    <main>
+        <div class="container">
+            <h2 class="text-center" id="TeamName">&nbsp;</h2>
+            <!--card deck that includes (here) the dynamically created list of services-->
+            <div class="card-deck">
+                <div class="card">
+                    <div class="card-body" id="teamManager">
+                        <h4 class="card-title text-center">Volunteer Team Manager</h4>
+                        <p class="card-text" id="ManagerName">&nbsp;</p>
+                        <p class="card-text" id="ManagerPhone">&nbsp;</p>
+                        <p class="card-text" id="ManagerEmail">&nbsp;</p>
+                    </div>
+                </div>
+                <!--(here) the dynamically created card with the spa service details on it-->
+                <div class="card">
+                    <div class="card-body" id="teamDetails">
+                        <h4 class="card-title text-center">Team Details</h4>
+                        <p class="card-text" id="MaxTeamMembers">&nbsp;</p>
+                        <p class="card-text" id="MinMemberAge">&nbsp;</p>
+                        <p class="card-text" id="MaxMemberAge">&nbsp;</p>
+                        <p class="card-text" id="TeamGender">&nbsp;</p>
+                    </div>
+                </div>
+                <!--(here) the dynamically created card with a picture for each service-->
+            </div>
+            <div id="teamMembers"></div>
+            <table id="memberTable" class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>Volunteer's Name</th>
+                            <th>Contact</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Age</th>
+                            <th>Gender</th>
+                        </tr>
+                    </thead>
+                    <tbody id="memberTableBody">
+                    </tbody>
+                </table>
+            <button type="button" class="btn btn-light blueBackground" id="addTeam" href="#">Sign Me Up!</button>
+        </div>
+    </main>
+
+    <!--footer-->
+    <footer class="text-right">
+        <hr>
+        <p>West Hartford Cares was created by Michelle Harrop as part of HartCode 2019. If this type of site already
+            exists, she was not aware of it before this project.</p>
+    </footer>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+    <!--My JavaScript-->
+    <script src="scripts/details.js"></script>
+</body>
+
+</html>
