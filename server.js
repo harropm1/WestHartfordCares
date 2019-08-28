@@ -176,7 +176,11 @@ app.get("/", function (req, res) {
 
 app.get("/index.html", function (req, res) {
     res.sendFile( __dirname + "/public/" + "index.html" );
- })
+})
+
+app.get("/search.html", function (req, res) {
+    res.sendFile( __dirname + "/public/" + "search.html" );
+})
 
 // TODO:  YOU WILL NEED TO ADD MORE CALLS TO app.get() FOR EACH PAGE
 //        YOU END UP BUILDING
