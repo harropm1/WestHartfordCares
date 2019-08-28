@@ -1,0 +1,22 @@
+[
+    {
+        "Name": "Women's Shelter",
+        "Code": "womensShelter",
+        "Description": "This location is the women's shelter in Hartford"
+    },
+    {
+        "Name": "Playgrounds",
+        "Code": "playgrounds",
+        "Description": "This location is all of the town playgrounds"
+    },
+    {
+        "Name": "Trails and Bike Paths",
+        "Code": "trails",
+        "Description": "This location is all of the town's walking trails and bike paths"
+    },
+    {
+        "Name": "Westmoor Park",
+        "Code": "westmoor",
+        "Description": "This location is Westmoor Park on Flagg Rd"
+    }
+]
