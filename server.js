@@ -205,6 +205,22 @@ app.get("/api/leagues", function (req, res) {
     res.end( JSON.stringify(data) );
 });
 
+//This is Michelle's adjustment to get the league code and use the league name
+app.get("/api/leagues/:id", function (req, res) {
+    let id = req.params.id;
+    console.log("Received a GET request for a league by code with " + id);                      
+
+    let data = fs.readFileSync( __dirname + "/data/leagues.json", "utf8");
+    data = JSON.parse(data);
+
+    // find the matching teams for 
+    let match = data.find (league => league.Code == id);
+
+    //console.log("Returned data is: ");
+    //logArrayOfTeams(matches);
+    res.end( JSON.stringify(match) );
+})
+
 // GET ALL TEAMS
 app.get("/api/teams", function (req, res) {
     console.log("Received a GET request for ALL teams");
