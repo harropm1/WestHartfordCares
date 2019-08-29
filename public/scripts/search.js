@@ -63,7 +63,7 @@ $(function ()
 
     $("#addTeam").on("click", function ()
     {
-        $("#addTeam").prop("href", "addcourse.html");
+        $("#addTeam").prop("href", "newteam.html");
     });
 });
 
