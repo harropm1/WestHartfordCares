@@ -28,6 +28,13 @@ $(function ()
 /* This function allows the user to add a team to a specific location */
 function createTeam()
 {
+    //calls the validation function from validate.js. if it doesn't return any errors, it continues to the next step
+    let isokay = validateTeam();
+    if (isokay == false)
+    {
+        return;
+    }
+
     //this is the post request to add the team into the array of teams
     $.post("/api/teams", $("#newteamForm").serialize(), function(data)
     {

@@ -624,7 +624,7 @@ app.put("/api/teams", urlencodedParser, function (req, res) {
     console.log("Found team!");
 
     // find existing member on the team
-    let foundAt = team.Members.findIndex( m => m.MemberId == req.body.memberid );
+    let foundAt = team.Members.findIndex( m => m.MemberId == memberId );
 
     let match = null;
     // delete the member if found
