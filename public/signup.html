@@ -53,7 +53,7 @@
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="membername" class="col-sm-2 col-form-label">Member Name</label>
+                    <label for="membername" class="col-sm-2 col-form-label">Volunteer Name</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control" id="membername" name="membername" value="" required>
                     </div>
@@ -100,13 +100,16 @@
                         </div>
                     </div>
                 </fieldset>
-                
+                <div id="msgDiv">
+                    <ul id="errorMessages">
+                    </ul>
+                </div>
                 <button type="button" class="btn btn-light blueBackground" id="signMeUp">Sign Me Up!</button>
                 <a role="button" class="btn btn-secondary" id="cancel" href="#">Wait, not yet!</a>
                 <a role="button" class="btn btn-primary" id="backToDetails" href="#">Back to Details</a>
             </form>
             <!--this shows as a warning, but the message is dynamically generated with jquery-->
-            <div id="msgDiv"></div>
+            
         </div>
     </main>
 
@@ -127,6 +130,7 @@
         crossorigin="anonymous"></script>
 
     <!--My JavaScript-->
+    <script src="scripts/validate.js"></script>
     <script src="scripts/signup.js"></script>
 </body>
 
