@@ -18,8 +18,10 @@ $(function ()
         insertData(teamInfo);
         insertMemberTable(teamInfo);
 
-        //$("#register").prop("href", "register.html?teamId=" + team.CourseId);
+        $("#signUp").prop("href", "signup.html?teamId=" + teamInfo.TeamId);
     });
+
+    
 
     //this links the back to teams page 
     $("#backToTeams").on("click", function ()
