@@ -13,6 +13,7 @@
     <!--My favicon and css-->
     <link rel="icon" href="images/hands-favicon.png">
     <link rel="stylesheet" href="styles/site.css">
+    <link rel="stylesheet" href="styles/signup.css">
 
     <title>West Hartford Cares</title>
 </head>
@@ -52,46 +53,34 @@
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="TeamName" class="col-sm-2 col-form-label">Team Name</label>
+                    <label for="membername" class="col-sm-2 col-form-label">Member Name</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="TeamName" name="TeamName" value="" readonly>
+                        <input type="text" class="form-control" id="membername" name="membername" value="" required>
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="League" class="col-sm-2 col-form-label">Location</label>
+                    <label for="contactname" class="col-sm-2 col-form-label">Contact</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="League" name="League" value="" readonly>
+                        <input type="text" class="form-control" id="contactname" name="contactname" value="" required>
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="MemberName" class="col-sm-2 col-form-label">Member Name</label>
+                    <label for="email" class="col-sm-2 col-form-label">Email</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="MemberName" name="MemberName" value="" required>
+                        <input type="text" class="form-control" id="email" name="email" value="" required>
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="ContactName" class="col-sm-2 col-form-label">Contact</label>
+                    <label for="phone" class="col-sm-2 col-form-label">Phone</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="ContactName" name="ContactName" value="" required>
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label for="Email" class="col-sm-2 col-form-label">Email</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="Email" name="Email" value="" required>
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label for="Phone" class="col-sm-2 col-form-label">Phone</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="Phone" name="Phone" value="" required>
+                        <input type="text" class="form-control" id="phone" name="phone" value="" required>
                     </div>
                 </div>
                 <!--This will be dynamically created because I hate having such long HTML-->
                 <div class="form-group row">
-                    <label for="Age" class="col-sm-2 col-form-label">Age</label>
+                    <label for="age" class="col-sm-2 col-form-label">Age</label>
                     <div class="col-sm-10">
-                        <select class="form-control" id="Age" name="Age">
+                        <select class="form-control" id="age" name="age">
                             <option value="chooseOne">Select Your Age</option>
                         </select>
                     </div>
@@ -101,11 +90,11 @@
                         <legend class="col-form-label col-sm-2 pt-0">Radios</legend>
                         <div class="col-sm-10">
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="gridRadios" id="Male" value="Male" checked>
+                                <input class="form-check-input" type="radio" name="gender" id="Male" value="Male" checked>
                                 <label class="form-check-label" for="Male">Male</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="gridRadios" id="Female" value="Female">
+                                <input class="form-check-input" type="radio" name="gender" id="Female" value="Female">
                                 <label class="form-check-label" for="Female">Female</label>
                             </div>
                         </div>
@@ -114,7 +103,7 @@
                 
                 <button type="button" class="btn btn-light blueBackground" id="signMeUp">Sign Me Up!</button>
                 <a role="button" class="btn btn-secondary" id="cancel" href="#">Wait, not yet</a>
-                <a role="button" class="btn btn-primary" id="backToDetails" href="#">Back to Search</a>
+                <a role="button" class="btn btn-primary" id="backToDetails" href="#">Back to Details</a>
             </form>
             <!--this shows as a warning, but the message is dynamically generated with jquery-->
             <div id="msgDiv"></div>
