@@ -14,11 +14,12 @@ $(function ()
     for (let i = 1; i <= 100; i++)
     {
         let newOption = $("<option>", { value: i, text: i });
-        $("#Age").append(newOption);
+        $("#age").append(newOption);
     }
 
     /* when the user clicks the sign me up button, it calls the function sendMemberInfo */
     $("#signMeUp").on("click", sendMemberInfo);
+    $("#cancel").prop("href", "details.html?teamId=" + teamId);
 });
 
 function sendMemberInfo()
@@ -29,7 +30,10 @@ function sendMemberInfo()
 
     $.post("/api/teams/" + teamId + "/members", $("#signupForm").serialize(), function (data)
     {
-        console.log($("#signupForm").serialize());
         $("#msgDiv").html("Thanks for volunteering!");
+        $("#signMeUp").prop("disabled", true);
+        $("#cancel").hide();
+        $("#backToDetails").show();
+        $("#backToDetails").prop("href", "details.html?teamId=" + teamId);
     })
 }
