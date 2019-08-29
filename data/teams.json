@@ -252,5 +252,28 @@
                 "Phone": "973-992-6242"
             }
         ]
+    },
+    {
+        "TeamId": 110,
+        "TeamName": "Cyclists for Good",
+        "League": "trails",
+        "ManagerName": "Don Deifendorf",
+        "ManagerPhone": "732-567-1593",
+        "ManagerEmail": "ddeifendorf@gmail.com",
+        "MaxTeamMembers": 15,
+        "MinMemberAge": 21,
+        "MaxMemberAge": 100,
+        "TeamGender": "Any",
+        "Members": [
+            {
+                "MemberId": 111,
+                "Email": "ddeifendorf@gmail.com",
+                "MemberName": "Don Deifendorf",
+                "ContactName": "Don Deifendorf",
+                "Age": 70,
+                "Gender": "Male",
+                "Phone": "732-567-1593"
+            }
+        ]
     }
 ]
