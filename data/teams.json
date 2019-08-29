@@ -96,6 +96,15 @@
                 "Age": 17,
                 "Gender": "Female",
                 "Phone": "555-864-2135"
+            },
+            {
+                "MemberId": 107,
+                "Email": "meganharrop@gmail.com",
+                "MemberName": "Megan Harrop",
+                "ContactName": "Megan Harrop",
+                "Age": 18,
+                "Gender": "Female",
+                "Phone": "973-597-0147"
             }
         ]
     },
