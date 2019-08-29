@@ -24,6 +24,14 @@ $(function ()
 
 function sendMemberInfo()
 {
+    //calls the validation function from validate.js. if it doesn't return any errors, it continues to the next step
+    let isokay = validateMember();
+    if (isokay == false)
+    {
+        return;
+    }
+
+    //sends the member info
     let urlParams = new URLSearchParams(location.search);
     let teamId = urlParams.get("teamId");
     $("#TeamId").val(teamId);
