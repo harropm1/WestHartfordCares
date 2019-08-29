@@ -194,6 +194,10 @@ app.get("/signup.html", function (req, res) {
     res.sendFile( __dirname + "/public/" + "signup.html" );
 })
 
+app.get("/newteam.html", function (req, res) {
+    res.sendFile( __dirname + "/public/" + "newteam.html" );
+})
+
 // TODO:  YOU WILL NEED TO ADD MORE CALLS TO app.get() FOR EACH PAGE
 //        YOU END UP BUILDING
 
@@ -350,7 +354,11 @@ app.post("/api/teams", urlencodedParser, function (req, res) {
    
     //console.log("New team added: ");
 	//logOneTeam(team);
-    res.status(200).send();
+    //res.status(200).send();
+
+    //This is the modified code that allows me to use the team id immediately
+    //to send the user back to the details page for their newly created team.
+    res.end( JSON.stringify(team) );
  })
 
  // EDIT A TEAM

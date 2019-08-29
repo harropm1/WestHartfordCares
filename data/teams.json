@@ -157,5 +157,100 @@
                 "Phone": "555-975-3124"
             }
         ]
+    },
+    {
+        "TeamId": 100,
+        "TeamName": "Friends of Westmoor Park",
+        "League": "westmoor",
+        "ManagerName": "Michelle Harrop",
+        "ManagerPhone": "973-722-9828",
+        "ManagerEmail": "harrop.michelle@gmail.com",
+        "MaxTeamMembers": 25,
+        "MinMemberAge": 6,
+        "MaxMemberAge": 100,
+        "TeamGender": "Any",
+        "Members": []
+    },
+    {
+        "TeamId": 101,
+        "TeamName": "Animal Lovers",
+        "League": "animalShelter",
+        "ManagerName": "Alex Bogdanoff",
+        "ManagerPhone": "555-888-7979",
+        "ManagerEmail": "abogdanoff@gmail.com",
+        "MaxTeamMembers": 15,
+        "MinMemberAge": 12,
+        "MaxMemberAge": 100,
+        "TeamGender": "Any",
+        "Members": [
+            {
+                "MemberId": 108,
+                "Email": "abogdanoff@gmail.com",
+                "MemberName": "Alex Bogdanoff",
+                "ContactName": "Alex Bogandoff",
+                "Age": 32,
+                "Gender": "Male",
+                "Phone": "555-888-7979"
+            }
+        ]
+    },
+    {
+        "TeamId": 102,
+        "TeamName": "Senior Tutors",
+        "League": "tutoring",
+        "ManagerName": "David Fitzgerald",
+        "ManagerPhone": "973-888-1515",
+        "ManagerEmail": "dfitz@gmail.com",
+        "MaxTeamMembers": 30,
+        "MinMemberAge": 60,
+        "MaxMemberAge": 100,
+        "TeamGender": "Any",
+        "Members": [
+            {
+                "MemberId": 110,
+                "Email": "dfitz@gmail.com",
+                "MemberName": "David Fitzgerald",
+                "ContactName": "David Fitzgerald",
+                "Age": 61,
+                "Gender": "Male",
+                "Phone": "973-888-1515"
+            }
+        ]
+    },
+    {
+        "TeamId": 108,
+        "TeamName": "Reading is Fun",
+        "League": "libPages",
+        "ManagerName": "Sarah Zidek",
+        "ManagerPhone": "456-789-1234",
+        "ManagerEmail": "szidek@gmail.com",
+        "MaxTeamMembers": 10,
+        "MinMemberAge": 16,
+        "MaxMemberAge": 100,
+        "TeamGender": "Any",
+        "Members": []
+    },
+    {
+        "TeamId": 109,
+        "TeamName": "Men Feeding Everyone",
+        "League": "foodPantry",
+        "ManagerName": "Bob Harrop",
+        "ManagerPhone": "973-992-6242",
+        "ManagerEmail": "rtharrop@gmail.com",
+        "MaxTeamMembers": 25,
+        "MinMemberAge": 18,
+        "MaxMemberAge": 100,
+        "TeamGender": "Male",
+        "Members": [
+            {
+                "MemberId": 109,
+                "Email": "rtharrop@gmail.com",
+                "MemberName": "Bob Harrop",
+                "ContactName": "Bob Harrop",
+                "Age": 63,
+                "Gender": "Male",
+                "Phone": "973-992-6242"
+            }
+        ]
     }
 ]

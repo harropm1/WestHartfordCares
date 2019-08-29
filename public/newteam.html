@@ -13,7 +13,7 @@
     <!--My favicon and css-->
     <link rel="icon" href="images/hands-favicon.png">
     <link rel="stylesheet" href="styles/site.css">
-    <link rel="stylesheet" href="styles/signup.css">
+    <link rel="stylesheet" href="styles/newteam.css">
 
     <title>West Hartford Cares</title>
 </head>
@@ -22,7 +22,8 @@
     <!--nav bar-->
     <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
         <a class="navbar-brand" href="index.html">Home</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+            aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
@@ -44,66 +45,84 @@
     <!--Form to sign up for team-->
     <main>
         <div class="container">
-            <h2 class="display-3 text-center">Join Our Team</h2>
-            <form id="signupForm" name="signupForm" action="signup.html" method="POST">
+            <h2 class="display-3 text-center">Make a New Team</h2>
+            <form id="newteamForm" name="newteamForm" action="newteam.html" method="POST">
                 <div class="form-group row">
-                    <label for="TeamId" class="col-sm-2 col-form-label">Team Id</label>
+                    <label for="teamname" class="col-sm-2 col-form-label">Team Name</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="TeamId" name="TeamId" value="" readonly>
+                        <input type="text" class="form-control" id="teamname" name="teamname" value="" required>
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="membername" class="col-sm-2 col-form-label">Member Name</label>
+                    <label for="leaguecode" class="col-sm-2 col-form-label">Volunteer Location</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="membername" name="membername" value="" required>
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label for="contactname" class="col-sm-2 col-form-label">Contact</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="contactname" name="contactname" value="" required>
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label for="email" class="col-sm-2 col-form-label">Email</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="email" name="email" value="" required>
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label for="phone" class="col-sm-2 col-form-label">Phone</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="phone" name="phone" value="" required>
-                    </div>
-                </div>
-                <!--This will be dynamically created because I hate having such long HTML-->
-                <div class="form-group row">
-                    <label for="age" class="col-sm-2 col-form-label">Age</label>
-                    <div class="col-sm-10">
-                        <select class="form-control" id="age" name="age">
-                            <option value="chooseOne">Select Your Age</option>
+                        <select class="form-control" id="leaguecode" name="leaguecode">
+                            <option value="chooseOne">Choose a Location</option>
                         </select>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="managername" class="col-sm-2 col-form-label">Manager's Name</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="managername" name="managername" value="" required>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="managerphone" class="col-sm-2 col-form-label">Manager's Phone</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="managerphone" name="managerphone" value="" required>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="manageremail" class="col-sm-2 col-form-label">Manager's Email</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="manageremail" name="manageremail" value="" required>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="maxteammembers" class="col-sm-2 col-form-label">Maximum Number of Volunteers</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="maxteammembers" name="maxteammembers" value=""
+                            min="1" max="50" required>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="minmemberage" class="col-sm-2 col-form-label">Minimum Volunteer Age</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="minmemberage" name="minmemberage" value="" min="5" max="100" required>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="maxmemberage" class="col-sm-2 col-form-label">Maximum Volunteer Age</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="maxmemberage" name="maxmemberage" value="" min="5" max="100" required>
                     </div>
                 </div>
                 <fieldset class="form-group">
                     <div class="row">
-                        <legend class="col-form-label col-sm-2 pt-0">Gender</legend>
+                        <legend class="col-form-label col-sm-2 pt-0">Team Gender</legend>
                         <div class="col-sm-10">
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="gender" id="Male" value="Male" checked>
+                                <input class="form-check-input" type="radio" name="teamgender" id="Male" value="Male"
+                                    checked>
                                 <label class="form-check-label" for="Male">Male</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="gender" id="Female" value="Female">
+                                <input class="form-check-input" type="radio" name="teamgender" id="Female" value="Female">
                                 <label class="form-check-label" for="Female">Female</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="teamgender" id="Any" value="Any">
+                                <label class="form-check-label" for="Any">Any</label>
                             </div>
                         </div>
                     </div>
                 </fieldset>
-                
-                <button type="button" class="btn btn-light blueBackground" id="signMeUp">Sign Me Up!</button>
+
+                <button type="button" class="btn btn-light blueBackground" id="makeTeam">Create This Team!</button>
                 <a role="button" class="btn btn-secondary" id="cancel" href="#">Wait, not yet!</a>
-                <a role="button" class="btn btn-primary" id="backToDetails" href="#">Back to Details</a>
+                <a role="button" class="btn btn-primary" id="backToSearch" href="#">Back to Search</a>
+                <a role="button" class="btn btn-light blueBackground" id="toTeamDetails" href="#">Go to Team Details</a>
             </form>
             <!--this shows as a warning, but the message is dynamically generated with jquery-->
             <div id="msgDiv"></div>
@@ -127,7 +146,7 @@
         crossorigin="anonymous"></script>
 
     <!--My JavaScript-->
-    <script src="scripts/signup.js"></script>
+    <script src="scripts/newteam.js"></script>
 </body>
 
 </html>
