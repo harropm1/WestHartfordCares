@@ -27,6 +27,11 @@ $(function ()
         $("#backToTeams").prop("href", "search.html");
     });
 
+    $("#editTeam").on("click", function()
+    {
+        $("#editTeam").prop("href", "editteam.html");
+    });
+
 });
 
 function insertData(team)
