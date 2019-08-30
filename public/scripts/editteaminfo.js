@@ -16,7 +16,7 @@ $(function ()
     {
         teamInfo = data;
 
-        insertData(teamInfo);
+        addTeamDetailsToPage(teamInfo);
         insertMemberTable(teamInfo);
     });
 
@@ -26,7 +26,7 @@ $(function ()
     */
     $("#confirmEdit").on("click", function ()
     {
-        let isok = validateForm();
+        let isok = validateTeam();
         if (isok == false)
         {
             return;
@@ -35,12 +35,15 @@ $(function ()
             {
                 url: '/api/teams',
                 method: 'PUT',
-                data: $("#editTeamForm").serialize(),
+                data: `teamid=${teamId}&${$("#editTeamForm").serialize()}`,
                 //this is "success" because for some reason, "done" does not work for me
                 success: function () 
                 {
                     $("#msgDiv").html("Update Successful!");
                     $("#confirmEdit").hide();
+                    $("#cancel").hide();
+                    $("#toTeamDetails").show();
+                    $("#toTeamDetails").prop("href", "details.html?teamId=" + teamId);
                 },
                 //this is "error" because for some reason, "fail" does not work for me
                 error: function ()
@@ -49,37 +52,56 @@ $(function ()
                 }
             });
     });
+
+    $("#cancel").on("click", function()
+    {
+        location.href = `details.html?teamId=${teamId}`;
+    })
 });
 
 /* This function adds the team data from the details page into the input
 *
 * @param - team = this is the data that is passed from the load function
 */
-function insertData(team)
+function addTeamDetailsToPage(team)
 {
-    //this puts the team info into the input fields
-    $("#teamname").val(team.TeamName);
-    $("#leaguecode").val(team.League);
-    $("#managername").val(team.ManagerName);
-    $("#managerphone").val(team.ManagerPhone);
-    $("#manageremail").val(team.ManagerEmail);
-    $("#maxteammembers").val(team.MaxTeamMembers);
-    $("#minmemberage").val(team.MinMemberAge);
-    $("#maxmemberage").val(team.MaxMemberAge);
-    $("input[type='radio'][name='teamgender']").val(team.TeamGender);
+    /* generates the location dropdown */
+    let league;
+    $.getJSON("api/leagues", function (data)
+    {
+        league = data;
+        for (let i = 0; i < league.length; i++)
+        {
+            let newOption = $("<option>", { text: league[i].Name, value: league[i].Code })
+            $("#leaguecode").append(newOption);
+        }
+        //this puts the team info into the input fields
+        $("#teamname").val(team.TeamName);
+        $("#leaguecode").val(team.League);
+        $("#managername").val(team.ManagerName);
+        $("#managerphone").val(team.ManagerPhone);
+        $("#manageremail").val(team.ManagerEmail);
+        $("#maxteammembers").val(team.MaxTeamMembers);
+        $("#minmemberage").val(team.MinMemberAge);
+        $("#maxmemberage").val(team.MaxMemberAge);
+        $(`input[name='teamgender'][value='${team.TeamGender}']`).prop("checked", true);
+
+    });
 }
 
-/* This function adds the names and info for each of the members of the team
+/* This function adds the names and info for each of the members of the team into the tables
 *
 * @param - team = this is the data that is passed from the load function
 */
 function insertMemberTable(team)
 {
+    //if no members on the team yet
     if (team.Members.length == 0)
     {
         let noMembers = "<tr><td>No volunteers yet!</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>"
         $("#memberTableBody").append(noMembers);
     }
+    //otherwise, add these details and buttons
     else
     {
         for (let i = 0; i < team.Members.length; i++)
