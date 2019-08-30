@@ -143,3 +143,8 @@ function validateTeam()
     }
     return false;
 }
+
+function validateEditTeam ()
+{
+    
+}
