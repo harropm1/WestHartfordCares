@@ -58,14 +58,9 @@ $(function ()
             });
     });
 
-    $("#cancel").on("click", function()
+    $("#cancel").on("click", function ()
     {
         location.href = `details.html?teamId=${teamId}`;
-    });
-
-    $("#remove").on("click", function()
-    {
-        location.href = `editmember.html?memberId=${teamInfo.Members.MemberId}`;
     });
 });
 
@@ -95,7 +90,6 @@ function addTeamDetailsToPage(team)
         $("#minmemberage").val(team.MinMemberAge);
         $("#maxmemberage").val(team.MaxMemberAge);
         $(`input[name='teamgender'][value='${team.TeamGender}']`).prop("checked", true);
-
     });
 }
 
@@ -132,11 +126,20 @@ function insertMemberTable(team)
                     <td>${phone}</td>
                     <td>${age}</td>
                     <td>${gender}</td>
-                    <td><a role="button" class="btn btn-light blueBackground" id="edit${memberId}" href="#">Edit</a></td>
-                    <td><a role="button" class="btn btn-secondary" id="remove${memberId}" href="#">Remove</a></td>
+                    <td><button type="button" class="btn btn-light blueBackground" id="edit${memberId}">Edit</button></td>
+                    <td><button type="button" class="btn btn-secondary" id="remove${memberId}">Remove</button></td>
                 </tr>`;
 
             $("#memberTableBody").append(htmlString);
+
+            $(`#remove${memberId}`).on("click", function ()
+            {
+                location.href = "editmember.html?teamId=" + team.TeamId + "&memberId=" + memberId;
+            });
+            $(`#edit${memberId}`).on("click", function()
+            {
+                location.href = "editmember.html?teamId=" + team.TeamId + "&memberId=" + memberId;
+            })
         }
     }
 }

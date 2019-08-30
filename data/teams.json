@@ -89,16 +89,7 @@
                 "Phone": "862-234-5678"
             },
             {
-                "MemberId": 105,
-                "Email": "tbaumann@gmail.com",
-                "MemberName": "Amy Baumann",
-                "ContactName": "Terry Baumann",
-                "Age": 17,
-                "Gender": "Female",
-                "Phone": "555-864-2135"
-            },
-            {
-                "MemberId": 107,
+                "MemberId": 115,
                 "Email": "meganharrop@gmail.com",
                 "MemberName": "Megan Harrop",
                 "ContactName": "Megan Harrop",
