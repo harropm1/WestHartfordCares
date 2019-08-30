@@ -21,33 +21,33 @@ $(function ()
         $("#signUp").prop("href", "signup.html?teamId=" + teamInfo.TeamId);
     });
 
-    
-
     //this links the back to teams page 
     $("#backToTeams").on("click", function ()
     {
         $("#backToTeams").prop("href", "search.html");
     });
 
-    /*this links to the edit course page associated with the specific course
-    $("#editClass").on("click", function ()
-    {
-        $("#editClass").prop("href", "editcourse.html?courseId=" + team.CourseId);
-    }); */
 });
 
 function insertData(team)
 {
     $("#TeamName").html(team.TeamName);
 
-    $("#ManagerName").html("Manager's Name: " + team.ManagerName);
-    $("#ManagerPhone").html("Manager's Phone Number: " + team.ManagerPhone);
-    $("#ManagerEmail").html("Manager's Email: " + team.ManagerEmail)
+    let managerInfo = `
+        <h3 class="card-title text-center">Volunteer Team Manager</h3>
+        <p class="card-text text-center" id="ManagerInfo">${team.ManagerName}
+        <br>${team.ManagerPhone}
+        <br>${team.ManagerEmail}</p>`;
+    $("#teamManager").append(managerInfo);
 
-    $("#MaxTeamMembers").html("Maximum Number of Volunteers: " + team.MaxTeamMembers);
-    $("#MinMemberAge").html("Minimum Volunteer Age: " + team.MinMemberAge);
-    $("#MaxMemberAge").html("Maximum Volunteer Age: " + team.MaxMemberAge);
-    $("#TeamGender").html("Team Gender: " + team.TeamGender);
+    let teamInfo = `
+        <h3 class="card-title text-center">Team Details</h3>
+        <p class="card-text text-center" id="teamInfo">Maximum Team Members: ${team.MaxTeamMembers}
+        <br>Volunteer Age Range: ${team.MinMemberAge} - ${team.MaxMemberAge}
+        <br>Team Gender: ${team.TeamGender}</p>`;
+    $("#teamDetails").append(teamInfo);
+
+    
 }
 
 function insertMemberTable(team)
