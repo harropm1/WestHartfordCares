@@ -31,6 +31,11 @@ $(function ()
         {
             return;
         }
+        let teamIsOkay = validateEditTeam(teamInfo);
+        if (teamIsOkay == false)
+        {
+            return;
+        }
         $.ajax(
             {
                 url: '/api/teams',

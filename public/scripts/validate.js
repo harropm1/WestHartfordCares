@@ -144,7 +144,100 @@ function validateTeam()
     return false;
 }
 
-function validateEditTeam ()
+/* This function checks four things: 1. if the edited amount of  team members is smaller than the current registered members
+* 2. if the edited team minimum age is greater than the youngest registered member
+* 3. if the edited team maximum age is less than the oldest registered member
+* 4. if the edited team gender will allow all members to stay on the team
+*/
+function validateEditTeam (data)
 {
-    
+    let errMsg = [];
+
+    if (Number($("#maxteammembers").val()) >= data.maxteammembers)
+    {
+        errMsg[errMsg.length] = "You have too many members for that team size";
+    }
+
+    if (Number($("#minmemberage").val()) > getMinAgeOfMember(data))
+    {
+        errMsg[errMsg.length] = "There is a member on this team that is younger than the new minimum age you have chosen.";
+    }
+
+    if (Number($("#maxmemberage").val()) < getMaxAgeOfMember(data))
+    {
+        errMsg[errMsg.length] = "There is a member on this team that is older than the new maximum age you have chosen.";
+    }
+
+    if (areThereAnyGenderChangeConflicts($(`input[name='teamgender']:checked`).val(), data))
+    {
+        errMsg[errMsg.length] = "You cannot change the gender of this team, because there is a member that is not that gender.";
+    }
+
+    if (errMsg.length == 0)
+    {
+        return true;
+    }
+
+    $("#errorMessages").empty();
+    for(let i=0; i < errMsg.length; i++)
+    {
+        $("<li>" + errMsg[i] + "</li>").appendTo($("#errorMessages"));
+    }
+    return false;
+}
+
+/*This function gets the youngest registered team member and compares it to the edited maximum age
+* @param - team = this is passed in from editteaminfo.js, and comes from the server
+*/
+function getMinAgeOfMember(team)
+{
+    let minAge = 100000;
+    for (let i = 0; i < team.Members.length; i++)
+    {
+        if (Number(team.Members[i].Age) < minAge) 
+        {
+            minAge = Number(team.Members[i].Age);
+        }
+    }
+    return minAge;
+}
+
+/*This function gets the oldest registered team member and compares it to the edited maximum age
+* @param - team = this is passed in from editteaminfo.js, and comes from the server
+*/
+function getMaxAgeOfMember(team)
+{
+    let maxAge = -1;
+    for (let i = 0; i < team.Members.length; i++)
+    {
+        if (Number(team.Members[i].Age) > maxAge) 
+        {
+            maxAge = Number(team.Members[i].Age);
+        }
+    }
+    return maxAge;
+}
+
+/*This function gets the gender of the current team and compares it to the edited team gender.
+* @param - team = this is passed in from editteaminfo.js, and comes from the server
+*/
+function areThereAnyGenderChangeConflicts(newTeamGender, team)
+{
+    if (newTeamGender == "Any")
+    {
+        // No conflict w/ team switching to coed
+        return false;  
+    } 
+ 
+    let conflictGender = newTeamGender == "Male" ? "Female" : "Male";
+    for (let i = 0; i < team.Members.length; i++)
+    {
+        // look for member whose gender would conflict with new team gender
+        if (team.Members[i].Gender == conflictGender) 
+        {
+            console.log("Found member who is " + team.Members[i].Gender + " on a team switching to " + newTeamGender);
+            return true;  // found a conflict!
+        }
+    }
+    return false; // no conflicts
 }
