@@ -13,7 +13,7 @@
     <!--My favicon and css-->
     <link rel="icon" href="images/hands-favicon.png">
     <link rel="stylesheet" href="styles/site.css">
-    <link rel="stylesheet" href="styles/newteam.css">
+    <link rel="stylesheet" href="styles/editteaminfo.css">
 
     <title>West Hartford Cares</title>
 </head>
@@ -42,11 +42,10 @@
         <h1 class="display-4 text-center">West Hartford Cares</h1>
     </header>
 
-    <!--Form to sign up for team-->
     <main>
         <div class="container">
-            <h2 class="display-3 text-center">Make a New Team</h2>
-            <form id="newteamForm" name="newteamForm" action="newteam.html" method="POST">
+            <h2 class="display-3 text-center">Edit Your Team</h2>
+            <form id="editTeamForm" name="editTeamForm" action="editteaminfo.html" method="POST">
                 <div class="form-group row">
                     <label for="teamname" class="col-sm-2 col-form-label">Team Name</label>
                     <div class="col-sm-10">
@@ -89,13 +88,15 @@
                 <div class="form-group row">
                     <label for="minmemberage" class="col-sm-2 col-form-label">Minimum Volunteer Age</label>
                     <div class="col-sm-10">
-                        <input type="number" class="form-control" id="minmemberage" name="minmemberage" value="" min="5" max="100" required>
+                        <input type="number" class="form-control" id="minmemberage" name="minmemberage" value="" min="5"
+                            max="100" required>
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="maxmemberage" class="col-sm-2 col-form-label">Maximum Volunteer Age</label>
                     <div class="col-sm-10">
-                        <input type="number" class="form-control" id="maxmemberage" name="maxmemberage" value="" min="5" max="100" required>
+                        <input type="number" class="form-control" id="maxmemberage" name="maxmemberage" value="" min="5"
+                            max="100" required>
                     </div>
                 </div>
                 <fieldset class="form-group">
@@ -107,11 +108,13 @@
                                 <label class="form-check-label" for="Male">Male</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="teamgender" id="Female" value="Female">
+                                <input class="form-check-input" type="radio" name="teamgender" id="Female"
+                                    value="Female">
                                 <label class="form-check-label" for="Female">Female</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="teamgender" id="Any" value="Any" checked>
+                                <input class="form-check-input" type="radio" name="teamgender" id="Any" value="Any"
+                                    checked>
                                 <label class="form-check-label" for="Any">Any</label>
                             </div>
                         </div>
@@ -123,13 +126,31 @@
                     </ul>
                 </div>
 
-                <button type="button" class="btn btn-light blueBackground" id="makeTeam">Create This Team!</button>
+                <button type="button" class="btn btn-light blueBackground" id="confirmEdit">Edit My Team!</button>
                 <a role="button" class="btn btn-secondary" id="cancel" href="#">Wait, not yet!</a>
                 <a role="button" class="btn btn-primary" id="backToSearch" href="#">Back to Search</a>
-                <a role="button" class="btn btn-light blueBackground" id="toTeamDetails" href="#">Go to Team Details</a>
+                <a role="button" class="btn btn-light blueBackground" id="toTeamDetails" href="#">Go to Team
+                    Details</a>
             </form>
             
-            
+            <div id="teamMembers"></div>
+            <table id="memberTable" class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>Volunteer's Name</th>
+                        <th>Contact</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Age</th>
+                        <th>Gender</th>
+                        <th>Edit?</th>
+                        <th>Remove?</th>
+                    </tr>
+                </thead>
+                <tbody id="memberTableBody">
+                </tbody>
+            </table>
+
         </div>
     </main>
 
@@ -150,8 +171,7 @@
         crossorigin="anonymous"></script>
 
     <!--My JavaScript-->
-    <script src="scripts/validate.js"></script>
-    <script src="scripts/newteam.js"></script>
+    <script src="scripts/editteaminfo.js"></script>
 </body>
 
 </html>

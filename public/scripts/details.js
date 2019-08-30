@@ -29,7 +29,7 @@ $(function ()
 
     $("#editTeam").on("click", function()
     {
-        $("#editTeam").prop("href", "editteam.html");
+        $("#editTeam").prop("href", "editteaminfo.html?teamId=" + teamInfo.TeamId);
     });
 
 });
@@ -50,9 +50,7 @@ function insertData(team)
         <p class="card-text text-center" id="teamInfo">Maximum Team Members: ${team.MaxTeamMembers}
         <br>Volunteer Age Range: ${team.MinMemberAge} - ${team.MaxMemberAge}
         <br>Team Gender: ${team.TeamGender}</p>`;
-    $("#teamDetails").append(teamInfo);
-
-    
+    $("#teamDetails").append(teamInfo); 
 }
 
 function insertMemberTable(team)
