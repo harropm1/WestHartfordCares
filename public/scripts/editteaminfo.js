@@ -61,7 +61,12 @@ $(function ()
     $("#cancel").on("click", function()
     {
         location.href = `details.html?teamId=${teamId}`;
-    })
+    });
+
+    $("#remove").on("click", function()
+    {
+        location.href = `editmember.html?memberId=${teamInfo.Members.MemberId}`;
+    });
 });
 
 /* This function adds the team data from the details page into the input
@@ -111,6 +116,7 @@ function insertMemberTable(team)
     {
         for (let i = 0; i < team.Members.length; i++)
         {
+            let memberId = team.Members[i].MemberId;
             let memberName = team.Members[i].MemberName;
             let contact = team.Members[i].ContactName;
             let email = team.Members[i].Email;
@@ -126,8 +132,8 @@ function insertMemberTable(team)
                     <td>${phone}</td>
                     <td>${age}</td>
                     <td>${gender}</td>
-                    <td><a role="button" class="btn btn-light blueBackground" id="edit" href="#">Edit</a></td>
-                    <td><a role="button" class="btn btn-secondary" id="remove" href="#">Remove</a></td>
+                    <td><a role="button" class="btn btn-light blueBackground" id="edit${memberId}" href="#">Edit</a></td>
+                    <td><a role="button" class="btn btn-secondary" id="remove${memberId}" href="#">Remove</a></td>
                 </tr>`;
 
             $("#memberTableBody").append(htmlString);
