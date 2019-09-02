@@ -10,8 +10,8 @@
         "Description": "This volunteer location services the West Hartford Food Pantry"
     },
     {
-        "Name": "Library Pages",
-        "Code": "libPages",
+        "Name": "Library",
+        "Code": "library",
         "Description": "This volunteer location services all of the West Hartford Libraries"
     },
     {
