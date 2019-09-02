@@ -1,23 +1,8 @@
 [
     {
-        "Name": "Women's Shelter",
-        "Code": "womensShelter",
-        "Description": "This volunteer location is at the women's shelter in Hartford"
-    },
-    {
-        "Name": "Playgrounds",
-        "Code": "playgrounds",
-        "Description": "This volunteer location is all over town at different playgrounds"
-    },
-    {
-        "Name": "Trails and Bike Paths",
-        "Code": "trails",
-        "Description": "This volunteer location is all of the town's walking trails and bike paths"
-    },
-    {
-        "Name": "Westmoor Park",
-        "Code": "westmoor",
-        "Description": "This volunteer location is at Westmoor Park on Flagg Rd"
+        "Name": "Animal Shelter",
+        "Code": "animalShelter",
+        "Description": "This volunteer location is at the West Hartford Animal Shelter"
     },
     {
         "Name": "Food Pantry",
@@ -30,13 +15,28 @@
         "Description": "This volunteer location services all of the West Hartford Libraries"
     },
     {
+        "Name": "Playgrounds",
+        "Code": "playgrounds",
+        "Description": "This volunteer location is all over town at different playgrounds"
+    },
+    {
+        "Name": "Trails and Bike Paths",
+        "Code": "trails",
+        "Description": "This volunteer location is all of the town's walking trails and bike paths"
+    },
+    {
         "Name": "Tutoring",
         "Code": "tutoring",
         "Description": "This volunteer location assists at various West Hartford Schools"
     },
     {
-        "Name": "Animal Shelter",
-        "Code": "animalShelter",
-        "Description": "This volunteer location is at the West Hartford Animal Shelter"
+        "Name": "Westmoor Park",
+        "Code": "westmoor",
+        "Description": "This volunteer location is at Westmoor Park on Flagg Rd"
+    },
+    {
+        "Name": "Women's Shelter",
+        "Code": "womensShelter",
+        "Description": "This volunteer location is at the women's shelter in Hartford"
     }
 ]

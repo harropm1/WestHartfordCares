@@ -22,20 +22,38 @@ $(function ()
     $("#cancel").prop("href", "details.html?teamId=" + teamId);
 });
 
+/* This function validates and sends the new member's info.
+* If the information the user enters is not valid, it will populate error messages 
+* (these are created in validate.js in the validateMember and validateMemberViolation functions)
+*/
 function sendMemberInfo()
 {
-    //calls the validation function from validate.js. if it doesn't return any errors, it continues to the next step
-    let isokay = validateMember();
-    if (isokay == false)
-    {
-        return;
-    }
-
-    //sends the member info
+    //sets the team id variable
     let urlParams = new URLSearchParams(location.search);
     let teamId = urlParams.get("teamId");
     $("#TeamId").val(teamId);
 
+    //calls the validation function from validate.js. if it doesn't return any errors, it continues to the next step
+    let isOkay = validateMember();
+    if (isOkay == false)
+    {
+        return;
+    }
+    /* call to the server to get the team id.
+    * It then validates if the new member can be added to the team, with no age discrepancies or gender discrepancies.
+    */
+    let teamInfo;
+    $.getJSON("api/teams/" + teamId, function (data)
+    {
+        teamInfo = data;
+        let isAlsoOkay = validateMemberViolation(teamInfo);
+        if (isAlsoOkay == false)
+        {
+            return;
+        }
+    });
+
+    //sends the member info
     $.post("/api/teams/" + teamId + "/members", $("#signupForm").serialize(), function (data)
     {
         $("#msgDiv").html("Thanks for volunteering!");

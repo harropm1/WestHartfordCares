@@ -31,7 +31,7 @@ function validateMember()
     {
         errMsg[errMsg.length] = "Email is in an improper format";
     }
-    
+
     //phone error
     let phoneNumber = $("#phone").val();
     let phonePattern = /^(?:\([2-9]\d{2}\)\ ?|[2-9]\d{2}(?:\-?|\ ?))[2-9]\d{2}[- ]?\d{4}$/;
@@ -39,7 +39,7 @@ function validateMember()
     {
         errMsg[errMsg.length] = "Phone Number is required";
     }
-    if (phonePattern.test(phoneNumber.trim()) ==  false)
+    if (phonePattern.test(phoneNumber.trim()) == false)
     {
         errMsg[errMsg.length] = "Phone Number must be in a patten similar to 555-555-5555";
     }
@@ -56,12 +56,40 @@ function validateMember()
     }
 
     $("#errorMessages").empty();
-    for(let i=0; i < errMsg.length; i++)
+    for (let i = 0; i < errMsg.length; i++)
     {
         $("<li>" + errMsg[i] + "</li>").appendTo($("#errorMessages"));
     }
     return false;
 }
+
+function validateMemberViolation(data)
+{
+    let errMsg = [];
+    
+    if (Number($("#age").val()) < data.MinMemberAge || Number($("#age").val()) > data.MaxMemberAge)
+    {
+        errMsg[errMsg.length] = "You are not within the age limit for this team.";
+    }
+
+    if (($(`input[name='teamgender']:checked`).val()) != "Any" || ($(`input[name='teamgender']:checked`).val()) != data.TeamGender)
+    {
+        errMsg[errMsg.length] = "This team has a gender restriction that you do not meet.";
+    }
+
+    if (errMsg.length == 0)
+    {
+        return true;
+    }
+
+    $("#errorMessages").empty();
+    for (let i = 0; i < errMsg.length; i++)
+    {
+        $("<li>" + errMsg[i] + "</li>").appendTo($("#errorMessages"));
+    }
+    return false;
+}
+
 
 /*This function validates if fields are empty, if emails follow a specific pattern, 
 * and if phone numbers fit a correct pattern. 
@@ -96,7 +124,7 @@ function validateTeam()
     {
         errMsg[errMsg.length] = "Manager's Phone is required";
     }
-    if (phonePattern.test(phoneNumber.trim()) ==  false)
+    if (phonePattern.test(phoneNumber.trim()) == false)
     {
         errMsg[errMsg.length] = "Manager's Phone must be in a patten similar to 555-555-5555";
     }
@@ -112,7 +140,7 @@ function validateTeam()
     {
         errMsg[errMsg.length] = "Manager's email is in an improper format";
     }
-    
+
     //max team members error
     if ($("#maxteammembers").val().trim() == "")
     {
@@ -120,13 +148,13 @@ function validateTeam()
     }
 
     //min member age error
-    if ($("#minmemberage").val().trim() == "" )
+    if ($("#minmemberage").val().trim() == "")
     {
         errMsg[errMsg.length] = "Minimum Volunteer Age is required";
     }
 
     //max member age error
-    if ($("#maxmemberage").val().trim() == "" )
+    if ($("#maxmemberage").val().trim() == "")
     {
         errMsg[errMsg.length] = "Maximum Volunteer Age is required";
     }
@@ -137,7 +165,7 @@ function validateTeam()
     }
 
     $("#errorMessages").empty();
-    for(let i=0; i < errMsg.length; i++)
+    for (let i = 0; i < errMsg.length; i++)
     {
         $("<li>" + errMsg[i] + "</li>").appendTo($("#errorMessages"));
     }
@@ -149,7 +177,7 @@ function validateTeam()
 * 3. if the edited team maximum age is less than the oldest registered member
 * 4. if the edited team gender will allow all members to stay on the team
 */
-function validateEditTeam (data)
+function validateEditTeam(data)
 {
     let errMsg = [];
 
@@ -179,7 +207,7 @@ function validateEditTeam (data)
     }
 
     $("#errorMessages").empty();
-    for(let i=0; i < errMsg.length; i++)
+    for (let i = 0; i < errMsg.length; i++)
     {
         $("<li>" + errMsg[i] + "</li>").appendTo($("#errorMessages"));
     }
@@ -226,9 +254,9 @@ function areThereAnyGenderChangeConflicts(newTeamGender, team)
     if (newTeamGender == "Any")
     {
         // No conflict w/ team switching to coed
-        return false;  
-    } 
- 
+        return false;
+    }
+
     let conflictGender = newTeamGender == "Male" ? "Female" : "Male";
     for (let i = 0; i < team.Members.length; i++)
     {
