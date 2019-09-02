@@ -1,0 +1,22 @@
+.image-container {
+    background-image: url("/images/header3.jpg"); /* The image used - important! */
+    background-size: cover; 
+    position: relative; /* Needed to position the cutout text in the middle of the image */
+    height: 600px; /* Some height */
+  }
+  
+  .text {
+    background-color: white;
+    color: black;
+    font-size: 8vw; /* Responsive font size */
+    font-weight: bold;
+    margin: 0 auto; /* Center the text container */
+    padding: 5px;
+    width: 45%;
+    text-align: center; /* Center text */
+    position: absolute; /* Position text */
+    top: 50%; /* Position text in the middle */
+    left: 50%; /* Position text in the middle */
+    transform: translate(-50%, -50%); /* Position text in the middle */
+    mix-blend-mode: screen; /* This makes the cutout text possible */
+  }
