@@ -13,3 +13,6 @@ h1, h2, h3 {
     background-color: #013e84 !important;
     color: white;
 }
+#errorMessages {
+    color: red;
+}
