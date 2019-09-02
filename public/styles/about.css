@@ -1,3 +1,76 @@
 body {
     color: #013e84;
+    font-size: 1.25em;
 }
+
+.slide1 {
+    /* The image used */
+    background-image: url("/images/p-food.jpg");
+    
+    /* Set a specific height */
+    height: 500px; 
+    
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.slide2 {
+    /* The image used */
+    background-image: url("/images/p-playgrounds.jpg");
+    
+    /* Set a specific height */
+    height: 500px; 
+    
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.slide3 {
+    /* The image used */
+    background-image: url("/images/p-trails.jpg");
+    
+    /* Set a specific height */
+    height: 500px; 
+    
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.slide4 {
+    /* The image used */
+    background-image: url("/images/p-westmoor.jpg");
+    
+    /* Set a specific height */
+    height: 500px; 
+    
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.slide5 {
+    /* The image used */
+    background-image: url("/images/p-library.jpg");
+    
+    /* Set a specific height */
+    height: 500px; 
+    
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+/* Turn off parallax scrolling for all tablets and phones */
+@media only screen and (max-device-width: 1200px) {
+    .slide1, .slide2, .slide3, .slide4, .slide5 {
+      background-attachment: scroll;
+    }
+  }
