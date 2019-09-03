@@ -22,7 +22,7 @@ function validateMember()
 
     //email error
     let email = $("#email").val();
-    let emailPattern = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
+    let emailPattern = /^\w+[\w-\.]*\@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
     if (email.trim() == "")
     {
         errMsg[errMsg.length] = "Email is required";
@@ -163,7 +163,7 @@ function validateTeam()
 
     //email error
     let email = $("#manageremail").val();
-    let emailPattern = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
+    let emailPattern = /^\w+[\w-\.]*\@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
     if (email.trim() == "")
     {
         errMsg[errMsg.length] = "Manager's email is required";

@@ -13,10 +13,7 @@ $(function ()
         addMemberDetailsToPage(memberInfo);
     });
 
-    /* this is what happens on the edit button. 
-    * first it validates the information to make sure everything is filled out.
-    * if it is all correct, it does an ajax put request (which contains options for a success and an error)
-    */
+
     $("#remove").on("click", function ()
     {
         $.ajax(
@@ -35,8 +32,12 @@ $(function ()
                 }
             });
     });
-
-    $("#edit").on("click", function()
+    
+    /* this is what happens on the edit button. 
+    * first it validates the information to make sure everything is filled out.
+    * if it is all correct, it does an ajax put request (which contains options for a success and an error)
+    */
+    $("#edit").on("click", function ()
     {
         let isok = validateMember();
         if (isok == false)
