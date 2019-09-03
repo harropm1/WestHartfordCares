@@ -75,7 +75,7 @@ function validateNewMemberViolation(data)
         errMsg[errMsg.length] = "You are not within the age limit for this team.";
     }
 
-    if (($(`input[name='teamgender']:checked`).val()) != "Any" || ($(`input[name='teamgender']:checked`).val()) != data.TeamGender)
+    if (data.TeamGender != "Any" && ($(`input[name='gender']:checked`).val()) != data.TeamGender)
     {
         errMsg[errMsg.length] = "This team has a gender restriction that you do not meet.";
     }

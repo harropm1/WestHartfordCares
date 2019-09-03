@@ -33,33 +33,33 @@ function sendMemberInfo()
     let teamId = urlParams.get("teamId");
     $("#TeamId").val(teamId);
 
-    //calls the validation function from validate.js. if it doesn't return any errors, it continues to the next step
-    let isOkay = validateMember();
-    if (isOkay == false)
-    {
-        return;
-    }
     /* call to the server to get the team id.
+    * It calls the validation function from validate.js. if it doesn't return any errors, it continues to the next step
     * It then validates if the new member can be added to the team, with no age discrepancies or gender discrepancies.
     */
     let teamInfo;
     $.getJSON("api/teams/" + teamId, function (data)
     {
         teamInfo = data;
+        let isOkay = validateMember();
+        if (isOkay == false)
+        {
+            return;
+        }
         let isAlsoOkay = validateNewMemberViolation(teamInfo);
         if (isAlsoOkay == false)
         {
             return;
         }
+        //sends the member info
+        $.post("/api/teams/" + teamId + "/members", $("#signupForm").serialize(), function (data)
+        {
+            $("#errorMessages").empty();
+            $("#msgDiv").html("Thanks for volunteering!");
+            $("#signMeUp").prop("disabled", true);
+            $("#cancel").hide();
+            $("#backToDetails").show();
+            $("#backToDetails").prop("href", "details.html?teamId=" + teamId);
+        });
     });
-
-    //sends the member info
-    $.post("/api/teams/" + teamId + "/members", $("#signupForm").serialize(), function (data)
-    {
-        $("#msgDiv").html("Thanks for volunteering!");
-        $("#signMeUp").prop("disabled", true);
-        $("#cancel").hide();
-        $("#backToDetails").show();
-        $("#backToDetails").prop("href", "details.html?teamId=" + teamId);
-    })
 }

@@ -14,7 +14,7 @@
     <link rel="icon" href="images/hands-favicon.png">
     <link rel="stylesheet" href="styles/site.css">
     <link rel="stylesheet" href="styles/newteam.css">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
 
     <title>West Hartford Cares</title>
 </head>
@@ -90,47 +90,50 @@
                 <div class="form-group row">
                     <label for="minmemberage" class="col-sm-2 col-form-label">Minimum Volunteer Age</label>
                     <div class="col-sm-10">
-                        <input type="number" class="form-control" id="minmemberage" name="minmemberage" value="" min="5" max="100" required>
+                        <input type="number" class="form-control" id="minmemberage" name="minmemberage" value="" min="5"
+                            max="100" required>
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="maxmemberage" class="col-sm-2 col-form-label">Maximum Volunteer Age</label>
                     <div class="col-sm-10">
-                        <input type="number" class="form-control" id="maxmemberage" name="maxmemberage" value="" min="5" max="100" required>
+                        <input type="number" class="form-control" id="maxmemberage" name="maxmemberage" value="" min="5"
+                            max="100" required>
                     </div>
                 </div>
-                <fieldset class="form-group">
-                    <div class="row">
-                        <legend class="col-form-label col-sm-2 pt-0">Team Gender</legend>
-                        <div class="col-sm-10">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="teamgender" id="Male" value="Male">
-                                <label class="form-check-label" for="Male">Male</label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="teamgender" id="Female" value="Female">
-                                <label class="form-check-label" for="Female">Female</label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="teamgender" id="Any" value="Any" checked>
-                                <label class="form-check-label" for="Any">Any</label>
-                            </div>
+                <div class="form-group row">
+                    <label class="col-form-label col-sm-2 pt-0">Team Gender</label>
+                    <div class="col-sm-10">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="teamgender" id="Male" value="Male">
+                            <label class="form-check-label" for="Male">Male</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="teamgender" id="Female" value="Female">
+                            <label class="form-check-label" for="Female">Female</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="teamgender" id="Any" value="Any" checked>
+                            <label class="form-check-label" for="Any">Any</label>
                         </div>
                     </div>
-                </fieldset>
-                <!--this shows as a warning, but the message is dynamically generated with jquery-->
-                <div id="msgDiv">
+                </div>
+
+                <!--these are the divs for the error messages-->
+                <div id="msgDiv"></div>
+                <div>
                     <ul id="errorMessages">
                     </ul>
                 </div>
 
+                <!--buttons to create team and go back-->
                 <button type="button" class="btn btn-light blueBackground" id="makeTeam">Create This Team!</button>
                 <a role="button" class="btn btn-secondary" id="cancel" href="#">Wait, not yet!</a>
                 <a role="button" class="btn btn-primary" id="backToSearch" href="#">Back to Search</a>
                 <a role="button" class="btn btn-light blueBackground" id="toTeamDetails" href="#">Go to Team Details</a>
             </form>
-            
-            
+
+
         </div>
     </main>
 

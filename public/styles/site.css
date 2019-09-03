@@ -1,6 +1,5 @@
 /* color for site: #013e84 */
 
-
 .navbar-custom {
     background-color: #013e84 !important;
     color: white;
@@ -8,7 +7,7 @@
 
 h1, h2, h3 {
     color: #013e84;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Raleway', sans-serif;
 }
 
 .blueBackground {
@@ -17,4 +16,8 @@ h1, h2, h3 {
 }
 #errorMessages {
     color: red;
+    font-size: 1em;
+}
+#msgDiv {
+    font-size: 1.5em;
 }
