@@ -69,7 +69,7 @@ $(function ()
     });
 });
 
-/* This function loops through the entire course list from server.js to know what to put into the table 
+/* This function loops through the entire teams list from server.js to know what to put into the table 
 *
 * @param - teamsList = this is what is passed from the ready functions and the server
 */
@@ -82,7 +82,7 @@ function createSearchByLocationTable(teamsList)
 }
 
 /* This function creates the table with a small amount of data.
-* It is used in both the all courses table and selection courses table.
+* It is used in both the all teams table and particular selection teams table.
 *
 * @param - team = this is what is passed from the ready functions and the server
 * @param - data = this is what is passed from the server and is allowing me to use the league name in this list.

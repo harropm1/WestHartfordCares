@@ -2,7 +2,7 @@
 
 /*This ready function loads when the page loads.
 *
-* @param - courseId - string = this is pulled from the course that the user selected on the course page
+* @param - teamId - string = this is pulled from the team that the user selected on the team page
 */
 $(function ()
 {
