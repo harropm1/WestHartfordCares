@@ -14,7 +14,7 @@
     <link rel="icon" href="images/hands-favicon.png">
     <link rel="stylesheet" href="styles/site.css">
     <link rel="stylesheet" href="styles/editteaminfo.css">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
 
     <title>West Hartford Cares</title>
 </head>
@@ -100,37 +100,39 @@
                             max="100" required>
                     </div>
                 </div>
-                <fieldset class="form-group">
-                    <div class="row">
-                        <legend class="col-form-label col-sm-2 pt-0">Team Gender</legend>
-                        <div class="col-sm-10">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="teamgender" id="Male" value="Male">
-                                <label class="form-check-label" for="Male">Male</label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="teamgender" id="Female" value="Female">
-                                <label class="form-check-label" for="Female">Female</label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="teamgender" id="Any" value="Any">
-                                <label class="form-check-label" for="Any">Any</label>
-                            </div>
+                <div class="form-group row">
+                    <label class="col-form-label col-sm-2 pt-0">Team Gender</label>
+                    <div class="col-sm-10">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="teamgender" id="Male" value="Male">
+                            <label class="form-check-label" for="Male">Male</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="teamgender" id="Female" value="Female">
+                            <label class="form-check-label" for="Female">Female</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="teamgender" id="Any" value="Any">
+                            <label class="form-check-label" for="Any">Any</label>
                         </div>
                     </div>
-                </fieldset>
-                <!--this shows as a warning, but the message is dynamically generated with jquery-->
-                <div id="msgDiv">
+                </div>
+
+                <!--these are the divs for the error messages-->
+                <div id="msgDiv"></div>
+                <div>
                     <ul id="errorMessages">
                     </ul>
                 </div>
 
+                <!--buttons to edit team, remove team, and go back-->
                 <button type="button" class="btn btn-light blueBackground" id="confirmEdit">Edit My Team!</button>
                 <a role="button" class="btn btn-secondary" id="cancel" href="#">Wait, not yet!</a>
                 <a role="button" class="btn btn-light blueBackground" id="toTeamDetails" href="#">Go to Team
                     Details</a>
                 <!-- Button to trigger modal -->
-                <button type="button" class="btn btn-primary" id="areYouSure" data-toggle="modal" data-target="#removeModal">Remove My Team</button>
+                <button type="button" class="btn btn-primary" id="areYouSure" data-toggle="modal"
+                    data-target="#removeModal">Remove My Team</button>
             </form>
 
             <!-- Modal -->
@@ -139,7 +141,7 @@
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Remove Team</h5>
+                            <h3 class="modal-title" id="exampleModalLabel">Remove Team</h3>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
@@ -148,13 +150,14 @@
                             Are you sure you want to remove this team? Volunteers on this team will be deleted also.
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">No, Take Me Back</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">No, Take Me
+                                Back</button>
                             <button type="button" class="btn btn-primary" id="remove">Yes, Remove It</button>
                         </div>
                     </div>
                 </div>
             </div>
-            
+
             <div id="teamMembers"></div>
             <table id="memberTable" class="table table-bordered table-striped">
                 <thead>
