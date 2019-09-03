@@ -128,7 +128,31 @@
                 <a role="button" class="btn btn-secondary" id="cancel" href="#">Wait, not yet!</a>
                 <a role="button" class="btn btn-light blueBackground" id="toTeamDetails" href="#">Go to Team
                     Details</a>
+                <!-- Button to trigger modal -->
+                <button type="button" class="btn btn-primary" id="areYouSure" data-toggle="modal" data-target="#removeModal">Remove My Team</button>
             </form>
+
+            <!-- Modal -->
+            <div class="modal fade" id="removeModal" tabindex="-1" role="dialog" aria-labelledby="removeModal"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Remove Team</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            Are you sure you want to remove this team? Volunteers on this team will be deleted also.
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">No, Take Me Back</button>
+                            <button type="button" class="btn btn-primary" id="remove">Yes, Remove It</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
             
             <div id="teamMembers"></div>
             <table id="memberTable" class="table table-bordered table-striped">

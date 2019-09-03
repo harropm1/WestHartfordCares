@@ -58,6 +58,25 @@ $(function ()
             });
     });
 
+    $("#remove").on("click", function ()
+    {
+        $.ajax(
+            {
+                url: '/api/teams/' + teamId,
+                method: 'DELETE',
+                //this is "success" because for some reason, "done" does not work for me
+                success: function () 
+                {
+                    location.href = `search.html`;
+                },
+                //this is "error" because for some reason, "fail" does not work for me
+                error: function ()
+                {
+                    location.href = `editteaminfo.html?teamId=${teamId}`;
+                }
+            });
+    });
+
     $("#cancel").on("click", function ()
     {
         location.href = `details.html?teamId=${teamId}`;
