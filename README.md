@@ -2,11 +2,11 @@
 This site, created by Michelle Harrop for HartCode Academy 2019 Capstone, allows visitors to see different volunteer locations and sign up for teams that do work at each of those sites.
 ## Images
 Index Page
-[Index Page](/public/images/README-index.png)
+[Index Page](/public/images/README-index.png?raw=true "Index Page")
 Search Page
-[Search Page](/public/images/README-search.png)
+[Search Page](/public/images/README-search.png?raw=true "Search Page")
 Edit Team Page
-[Edit Team Page](/public/images/README-edit.png)
+[Edit Team Page](/public/images/README-edit.png?raw=true "Edit Team Page")
 
 ## Getting Started
 
