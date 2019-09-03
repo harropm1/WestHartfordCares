@@ -21,7 +21,7 @@ $(function ()
     {
         $.ajax(
             {
-                url: '/api/teams/' + teamId + "/members/" + memberId,
+                url: "/api/teams/" + teamId + "/members/" + memberId,
                 method: 'DELETE',
                 //this is "success" because for some reason, "done" does not work for me
                 success: function () 
@@ -35,6 +35,42 @@ $(function ()
                 }
             });
     });
+
+    $("#edit").on("click", function()
+    {
+        let isok = validateMember();
+        if (isok == false)
+        {
+            return;
+        }
+        let memberIsOk = validateEditedMember(memberInfo);
+        if (memberIsOk == false)
+        {
+            return;
+        }
+
+        $.ajax(
+            {
+                url: "/api/teams/" + teamId + "/members",
+                method: 'PUT',
+                data: `memberid=${memberId}&${$("#editMemberForm").serialize()}`,
+                //this is "success" because for some reason, "done" does not work for me
+                success: function () 
+                {
+                    $("#msgDiv").html("Update Successful!");
+                    $("#edit").prop("disabled", true)
+                    $("#areYouSure").hide();
+                    $("#cancel").hide();
+                    $("#backToDetails").show();
+                    $("#backToDetails").prop("href", "details.html?teamId=" + teamId);
+                },
+                //this is "error" because for some reason, "fail" does not work for me
+                error: function ()
+                {
+                    $("#msgDiv").html("Something went wrong. Please try again");
+                }
+            });
+    })
 
     $("#cancel").on("click", function ()
     {
