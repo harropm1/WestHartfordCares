@@ -1,16 +1,25 @@
 "use strict";
 
-/*This ready function calls the insert table data function.
-* It also adds a register button that connects a user to the register page for this course
+/*This ready function does four(ish) things. 1a. It calls the server to get the information to add into the input fields
+* 1b. It adds the member info into the table.
 *
-* @param - courseId - string = this is pulled from the course that the user selected on the course page
+* 2. this is what happens when the user clicks the confirm edit button. 
+* 2a. it validates the information to make sure everything is filled out and the members still meet the team requirements. 
+* 2b. if it is all correct, it does an ajax put request (which contains options for a success and an error)
+*
+* 3. When the user clicks the remove button (on the modal), it deletes the team.
+*
+* 4. When the user clicks the cancel button, it sends them back to the details page for that team
+*
+* @param - data =  this comes from the server and contains all the details about a specific team
 */
 $(function ()
 {
+    //this pulls the teamId from the URL
     let urlParams = new URLSearchParams(location.search);
     let teamId = urlParams.get("teamId");
 
-    /* this is the call to the server */
+    //see 1a and 1b above
     let teamInfo;
     $.getJSON("api/teams/" + teamId, function (data)
     {
@@ -20,12 +29,10 @@ $(function ()
         insertMemberTable(teamInfo);
     });
 
-    /* this is what happens on the confirm edit button. 
-    * first it validates the information to make sure everything is filled out.
-    * if it is all correct, it does an ajax put request (which contains options for a success and an error)
-    */
+    //see 2 above
     $("#confirmEdit").on("click", function ()
     {
+        //see 2a above
         let isok = validateTeam();
         if (isok == false)
         {
@@ -36,6 +43,7 @@ $(function ()
         {
             return;
         }
+        //see 2b above
         $.ajax(
             {
                 url: '/api/teams',
@@ -58,6 +66,7 @@ $(function ()
             });
     });
 
+    //see 3 above
     $("#remove").on("click", function ()
     {
         $.ajax(
@@ -77,6 +86,7 @@ $(function ()
             });
     });
 
+    //see 4 above
     $("#cancel").on("click", function ()
     {
         location.href = `details.html?teamId=${teamId}`;
@@ -85,7 +95,7 @@ $(function ()
 
 /* This function adds the team data from the details page into the input
 *
-* @param - team = this is the data that is passed from the load function
+* @param - team = this is the data that is passed from the ready function
 */
 function addTeamDetailsToPage(team)
 {
@@ -114,7 +124,7 @@ function addTeamDetailsToPage(team)
 
 /* This function adds the names and info for each of the members of the team into the tables
 *
-* @param - team = this is the data that is passed from the load function
+* @param - team = this is the data that is passed from the ready function
 */
 function insertMemberTable(team)
 {
