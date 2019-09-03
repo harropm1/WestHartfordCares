@@ -46,7 +46,7 @@ function sendMemberInfo()
     $.getJSON("api/teams/" + teamId, function (data)
     {
         teamInfo = data;
-        let isAlsoOkay = validateMemberViolation(teamInfo);
+        let isAlsoOkay = validateNewMemberViolation(teamInfo);
         if (isAlsoOkay == false)
         {
             return;

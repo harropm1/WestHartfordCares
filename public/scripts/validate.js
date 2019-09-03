@@ -63,7 +63,10 @@ function validateMember()
     return false;
 }
 
-function validateMemberViolation(data)
+/* This function validates if a member being added to a team violates the age rules or gender rules of the team.
+* @param - data = this is passed in from details.js, and comes from the server 
+*/
+function validateNewMemberViolation(data)
 {
     let errMsg = [];
     
@@ -90,6 +93,35 @@ function validateMemberViolation(data)
     return false;
 }
 
+/* This function validates an edited member's age and gender against the team's rules 
+* @param - data = this is passed in from editmember.js, and comes from the server
+*/
+function validateEditedMember(data)
+{
+    let errMsg = [];
+    
+    if (Number($("#age").val()) < data.MinMemberAge || Number($("#age").val()) > data.MaxMemberAge)
+    {
+        errMsg[errMsg.length] = "You are not within the age limit for this team.";
+    }
+
+    if (data.TeamGender != "Any" && ($(`input[name='teamgender']:checked`).val()) != data.TeamGender)
+    {
+        errMsg[errMsg.length] = "This team has a gender restriction that you do not meet.";
+    }
+
+    if (errMsg.length == 0)
+    {
+        return true;
+    }
+
+    $("#errorMessages").empty();
+    for (let i = 0; i < errMsg.length; i++)
+    {
+        $("<li>" + errMsg[i] + "</li>").appendTo($("#errorMessages"));
+    }
+    return false;
+}
 
 /*This function validates if fields are empty, if emails follow a specific pattern, 
 * and if phone numbers fit a correct pattern. 
@@ -176,6 +208,7 @@ function validateTeam()
 * 2. if the edited team minimum age is greater than the youngest registered member
 * 3. if the edited team maximum age is less than the oldest registered member
 * 4. if the edited team gender will allow all members to stay on the team
+* @param - data = this is passed in from editteaminfo.js, and comes from the server
 */
 function validateEditTeam(data)
 {
