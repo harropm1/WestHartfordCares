@@ -1,16 +1,20 @@
 "use strict";
 
-/*This ready function calls the insert table data function.
-* It also adds a register button that connects a user to the register page for this course
+/*This ready function does three(ish) things. 1. It calls the server to get the information to add into the input fields
 *
-* @param - courseId - string = this is pulled from the course that the user selected on the course page
+* 2. When the user clicks back to teams, this links them back to the teams page
+*
+* 3. When the user clicks editteam, this links them to the edit team page for that particular team 
+*
+* @param - data =  this comes from the server and contains all the details about a specific member on a specific team
 */
 $(function ()
 {
+    //this pulls the teamId from the URL
     let urlParams = new URLSearchParams(location.search);
     let teamId = urlParams.get("teamId");
 
-    /* this is the call to the server */
+    //see 1 above
     let teamInfo;
     $.getJSON("api/teams/" + teamId, function (data)
     {
@@ -21,7 +25,7 @@ $(function ()
         $("#signUp").prop("href", "signup.html?teamId=" + teamInfo.TeamId);
     });
 
-    //this links the back to teams page 
+    //see 2 above
     $("#backToTeams").on("click", function ()
     {
         $("#backToTeams").prop("href", "search.html");
@@ -34,6 +38,10 @@ $(function ()
 
 });
 
+/* This function inserts the data about a specific team into two different cards.
+*
+* @param - member =  this is passed from the call to the function above. It has the details about a specific team
+*/
 function insertData(team)
 {
     $("#TeamName").html(team.TeamName);
@@ -53,6 +61,10 @@ function insertData(team)
     $("#teamDetails").append(teamInfo); 
 }
 
+/* This function inserts the data about a specific team's members into a table.
+*
+* @param - member =  this is passed from the call to the function above. It has the details about the members on a specific team
+*/
 function insertMemberTable(team)
 {
     if (team.Members.length == 0)

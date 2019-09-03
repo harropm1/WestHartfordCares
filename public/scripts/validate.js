@@ -70,11 +70,13 @@ function validateNewMemberViolation(data)
 {
     let errMsg = [];
     
+    //validates if person is within the correct ages set by the team manager
     if (Number($("#age").val()) < data.MinMemberAge || Number($("#age").val()) > data.MaxMemberAge)
     {
         errMsg[errMsg.length] = "You are not within the age limit for this team.";
     }
 
+    //validates if person fits the gender set by the team manager
     if (data.TeamGender != "Any" && ($(`input[name='gender']:checked`).val()) != data.TeamGender)
     {
         errMsg[errMsg.length] = "This team has a gender restriction that you do not meet.";
@@ -100,11 +102,13 @@ function validateEditedMember(data)
 {
     let errMsg = [];
     
+    //validates if person is within the correct ages set by the team manager
     if (Number($("#age").val()) < data.MinMemberAge || Number($("#age").val()) > data.MaxMemberAge)
     {
         errMsg[errMsg.length] = "You are not within the age limit for this team.";
     }
 
+    //validates if person fits the gender set by the team manager
     if (data.TeamGender != "Any" && ($(`input[name='teamgender']:checked`).val()) != data.TeamGender)
     {
         errMsg[errMsg.length] = "This team has a gender restriction that you do not meet.";
@@ -214,21 +218,25 @@ function validateEditTeam(data)
 {
     let errMsg = [];
 
+    //see 1 above
     if (Number($("#maxteammembers").val()) >= data.maxteammembers)
     {
         errMsg[errMsg.length] = "You have too many members for that team size";
     }
 
+    //see 2 above
     if (Number($("#minmemberage").val()) > getMinAgeOfMember(data))
     {
         errMsg[errMsg.length] = "There is a member on this team that is younger than the new minimum age you have chosen.";
     }
 
+    //see 3 above
     if (Number($("#maxmemberage").val()) < getMaxAgeOfMember(data))
     {
         errMsg[errMsg.length] = "There is a member on this team that is older than the new maximum age you have chosen.";
     }
 
+    //see 4 above
     if (areThereAnyGenderChangeConflicts($(`input[name='teamgender']:checked`).val(), data))
     {
         errMsg[errMsg.length] = "You cannot change the gender of this team, because there is a member that is not that gender.";

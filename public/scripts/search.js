@@ -1,8 +1,9 @@
 "use strict";
 
-/*This ready function does three things. First it calls categories to dynamically load a dropdown.
-* Next, it loads a table of teams based on what the user selected.
-* Third, it loads all of the teams, if the user clicked that button.
+/*This ready function does four things. 1. it calls locations to dynamically load a dropdown.
+* 2. it loads a table of teams based on what the user selected.
+* 3. it loads all of the teams, if the user clicked that button.
+* 4. it sends the user to newteam.html when they click the addTeam button
 *
 * @param - data - in each case, this refers to the data from the server.js
 */
@@ -13,7 +14,7 @@ $(function ()
     $("thead").hide();
     $("#addTeam").hide();
 
-    /* generates the dropdown */
+    //see 1 above
     $.getJSON("api/leagues", function (data)
     {
         league = data;
@@ -24,7 +25,7 @@ $(function ()
         }
     });
 
-    /* generates a table by location selection */
+    //see 2 above
     $("#locationSelect").on("change", function ()
     {
         let teams;
@@ -47,7 +48,7 @@ $(function ()
         }
     });
 
-    /* generates a table with all teams */
+    //see 3 above
     let allTeams;
     $("#viewAll").on("click", function ()
     {
@@ -61,6 +62,7 @@ $(function ()
         });
     });
 
+    //see 4 above
     $("#addTeam").on("click", function ()
     {
         $("#addTeam").prop("href", "newteam.html");

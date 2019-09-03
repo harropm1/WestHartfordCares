@@ -1,11 +1,25 @@
+"use strict";
+
+/*This ready function does four(ish) things. 1. It calls the server to get the information to add into the input fields
+*
+* 2. When the user clicks the remove button (on the modal), it deletes the member.
+*
+* 3. this is what happens when the user clicks the edit button. 
+* 3a. it validates the information to make sure everything is filled out and has the member still meets the team requirements. 
+* 3b. if it is all correct, it does an ajax put request (which contains options for a success and an error)
+*
+* 4. When the user clicks the cancel button, it sends them back to the details page for that team
+*
+* @param - data =  this comes from the server and contains all the details about a specific member on a specific team
+*/
 $(function ()
 {
+    //this pulls the teamId and memberId from the URL
     let urlParams = new URLSearchParams(location.search);
     let teamId = urlParams.get("teamId");
     let memberId = urlParams.get("memberId");
 
-    ///api/teams/:id/members
-    /* this is the call to the server */
+    //see 1 above
     let memberInfo;
     $.getJSON("/api/teams/" + teamId + "/members/" + memberId, function (data)
     {
@@ -13,7 +27,7 @@ $(function ()
         addMemberDetailsToPage(memberInfo);
     });
 
-
+    //see 2 above
     $("#remove").on("click", function ()
     {
         $.ajax(
@@ -33,12 +47,10 @@ $(function ()
             });
     });
     
-    /* this is what happens on the edit button. 
-    * first it validates the information to make sure everything is filled out.
-    * if it is all correct, it does an ajax put request (which contains options for a success and an error)
-    */
+    //see 3 above
     $("#edit").on("click", function ()
     {
+        //see 3a above
         let isok = validateMember();
         if (isok == false)
         {
@@ -49,7 +61,7 @@ $(function ()
         {
             return;
         }
-
+        //see 3b above
         $.ajax(
             {
                 url: "/api/teams/" + teamId + "/members",
@@ -73,12 +85,17 @@ $(function ()
             });
     })
 
+    //see 4 above
     $("#cancel").on("click", function ()
     {
         location.href = `details.html?teamId=${teamId}`;
     });
 });
 
+/* This function adds the member details to the inputs on the page.
+* 
+* @param - member =  this is passed from the call to the function above. the data comes from the server and has all the details about a specific member on a specific team
+*/
 function addMemberDetailsToPage(member)
 {
     //this adds the team id into that input field

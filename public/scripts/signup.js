@@ -28,24 +28,26 @@ $(function ()
 */
 function sendMemberInfo()
 {
-    //sets the team id variable
+    //sets the team id variable from the URL
     let urlParams = new URLSearchParams(location.search);
     let teamId = urlParams.get("teamId");
     $("#TeamId").val(teamId);
 
     /* call to the server to get the team id.
-    * It calls the validation function from validate.js. if it doesn't return any errors, it continues to the next step
-    * It then validates if the new member can be added to the team, with no age discrepancies or gender discrepancies.
+    * 1. It calls the validation function from validate.js. if it doesn't return any errors, it continues to the next step.
+    * 2. It then validates if the new member can be added to the team, with no age discrepancies or gender discrepancies.
     */
     let teamInfo;
     $.getJSON("api/teams/" + teamId, function (data)
     {
+        //see 1 above
         teamInfo = data;
         let isOkay = validateMember();
         if (isOkay == false)
         {
             return;
         }
+        //see 2 above
         let isAlsoOkay = validateNewMemberViolation(teamInfo);
         if (isAlsoOkay == false)
         {

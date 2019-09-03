@@ -1,10 +1,16 @@
 "use strict";
 
+/*This ready function does four things. 1. it calls locations to dynamically load a dropdown.
+* 2. when the user clicks the create team button, it calls the function createTeam
+* 3. links the cancel button and sends it back to the search page
+*
+* @param - data - in this case, this refers to the data from the server.js
+*/
 $(function ()
 {
     let leagues;
     
-    // generates the location dropdown
+    //see 1 above
     $.getJSON("/api/leagues", function (data)
     {
         leagues = data;
@@ -15,17 +21,17 @@ $(function ()
         }
     });
 
-    //when the user clicks the create team button, it calls the function createTeam
+    //see 2 above
     $("#makeTeam").on("click", createTeam);
 
-    //this links the cancel button and sends it back to the search page
+    //see 3 above
     $("#cancel").on("click", function ()
     {
         document.location.href = "search.html";
     });
 })
 
-/* This function allows the user to add a team to a specific location */
+/* This function allows the user to add a team to a specific location (league) */
 function createTeam()
 {
     //calls the validation function from validate.js. if it doesn't return any errors, it continues to the next step
@@ -40,6 +46,7 @@ function createTeam()
     {
         data = JSON.parse(data);
         
+        $("#errorMessages").empty();
         $("#msgDiv").html("We're glad you're here!");
         $("#makeTeam").hide();
         $("#cancel").hide();

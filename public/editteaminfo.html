@@ -39,6 +39,7 @@
         </div>
     </nav>
 
+    <!--header-->
     <header>
         <h1 class="display-4 text-center">West Hartford Cares</h1>
     </header>
@@ -46,6 +47,7 @@
     <main>
         <div class="container">
             <h2 class="display-3 text-center">Edit Your Team</h2>
+            <!--Form to edit or remove a team-->
             <form id="editTeamForm" name="editTeamForm" action="editteaminfo.html" method="POST">
                 <div class="form-group row">
                     <label for="teamname" class="col-sm-2 col-form-label">Team Name</label>
@@ -53,6 +55,7 @@
                         <input type="text" class="form-control" id="teamname" name="teamname" value="" required>
                     </div>
                 </div>
+                <!--this dropdown is dynamically created-->
                 <div class="form-group row">
                     <label for="leaguecode" class="col-sm-2 col-form-label">Volunteer Location</label>
                     <div class="col-sm-10">
@@ -117,25 +120,23 @@
                         </div>
                     </div>
                 </div>
-
                 <!--these are the divs for the error messages-->
                 <div id="msgDiv"></div>
                 <div>
                     <ul id="errorMessages">
                     </ul>
                 </div>
-
                 <!--buttons to edit team, remove team, and go back-->
                 <button type="button" class="btn btn-light blueBackground" id="confirmEdit">Edit My Team!</button>
                 <a role="button" class="btn btn-secondary" id="cancel" href="#">Wait, not yet!</a>
                 <a role="button" class="btn btn-light blueBackground" id="toTeamDetails" href="#">Go to Team
                     Details</a>
-                <!-- Button to trigger modal -->
+                <!--Button to trigger modal-->
                 <button type="button" class="btn btn-primary" id="areYouSure" data-toggle="modal"
                     data-target="#removeModal">Remove My Team</button>
             </form>
 
-            <!-- Modal -->
+            <!--Modal-->
             <div class="modal fade" id="removeModal" tabindex="-1" role="dialog" aria-labelledby="removeModal"
                 aria-hidden="true">
                 <div class="modal-dialog" role="document">
@@ -157,7 +158,9 @@
                     </div>
                 </div>
             </div>
+            <!--end modal-->
 
+            <!--dynamically created table with the volunteer's information-->
             <div id="teamMembers"></div>
             <table id="memberTable" class="table table-bordered table-striped">
                 <thead>
@@ -175,7 +178,6 @@
                 <tbody id="memberTableBody">
                 </tbody>
             </table>
-
         </div>
     </main>
 
