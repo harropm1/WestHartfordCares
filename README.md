@@ -82,7 +82,7 @@ Some of the volunteer locations are fictional, but Westmoor Park does exist. The
 * Suriya (for reminding me not to take on more than I can handle)
 * Vanessa (for data validation checks and style tips)
 * Michael (for design inspiration and validation assistance)
-* Rob (for reminders to push changes and working around my wedding)
+* Rob (for reminders to push changes, global-dark-mode help, and working around my wedding)
 * Denise (for checking in with us, arranging for visitors, and working around my wedding)
 * Renisa (for checking in with us, arranging for visitors, and working around my wedding)
 * Franca (for supporting us, arranging for visitors, and working around my wedding)

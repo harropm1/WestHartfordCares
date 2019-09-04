@@ -76,3 +76,8 @@
   transform: translate(-50%, -50%); /* Position text in the middle */
   mix-blend-mode: screen; /* This makes the cutout text possible */
 }
+
+h2 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}

@@ -95,7 +95,7 @@ function insertTableData(team)
         let rowBeingEntered = "<tr><td>" + league.Name +
             "</td><td>" + team.TeamName +
             "</td><td>" + team.ManagerName +
-            "</td><td><a target='_self' class='green' href='details.html?teamId=" + team.TeamId +
+            "</td><td><a target='_self' href='details.html?teamId=" + team.TeamId +
             "'>Details</a></td></tr>";
 
         $("#tableBody").append(rowBeingEntered);

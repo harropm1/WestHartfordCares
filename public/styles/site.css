@@ -10,6 +10,10 @@ h1, h2, h3 {
     font-family: 'Raleway', sans-serif;
 }
 
+h1 {
+    margin-top: 8px;
+}
+
 .blueBackground {
     background-color: #013e84 !important;
     color: white;

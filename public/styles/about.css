@@ -71,6 +71,10 @@ main {
 /* Turn off parallax scrolling for all tablets and phones */
 @media only screen and (max-device-width: 992px) {
     .parallax {
-      background-attachment: scroll;
+        background-attachment: scroll;
     }
-  }
+}
+
+h2 {
+    margin-bottom: 15px;
+}
