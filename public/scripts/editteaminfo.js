@@ -52,16 +52,18 @@ $(function ()
                 //this is "success" because for some reason, "done" does not work for me
                 success: function () 
                 {
+                    $("#errorMessages").empty();
                     $("#msgDiv").html("Update Successful!");
                     $("#confirmEdit").hide();
                     $("#cancel").hide();
+                    $("#areYouSure").hide();
                     $("#toTeamDetails").show();
                     $("#toTeamDetails").prop("href", "details.html?teamId=" + teamId);
                 },
                 //this is "error" because for some reason, "fail" does not work for me
                 error: function ()
                 {
-                    $("#msgDiv").html("Something went wrong.");
+                    $("#msgDiv").html("Something went wrong. Please try again.");
                 }
             });
     });

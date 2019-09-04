@@ -70,6 +70,7 @@ $(function ()
                 //this is "success" because for some reason, "done" does not work for me
                 success: function () 
                 {
+                    $("#errorMessages").empty();
                     $("#msgDiv").html("Update Successful!");
                     $("#edit").prop("disabled", true)
                     $("#areYouSure").hide();
