@@ -304,7 +304,6 @@ function areThereAnyGenderChangeConflicts(newTeamGender, team)
         // look for member whose gender would conflict with new team gender
         if (team.Members[i].Gender == conflictGender) 
         {
-            console.log("Found member who is " + team.Members[i].Gender + " on a team switching to " + newTeamGender);
             return true;  // found a conflict!
         }
     }
