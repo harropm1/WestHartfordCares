@@ -2,15 +2,21 @@
 @media (max-width: 576px) {
   img {
     display: none;
-   }
-   .card-deck .card:first-child {
+  }
+  .card-deck .card:first-child {
     margin-left: 15px;
+  }
+  h1 {
+    font-size: .6em;
   }
 }
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
   img {
-   display: none;
+    display: none;
+  }
+  h1 {
+    font-size: .6em;
   }
 }
 
@@ -19,23 +25,26 @@
   img {
     display: none;
   }
-	.card-deck-wrapper {
+  .card-deck-wrapper {
     margin-right:0;
     margin-left:0;
   }
-	.card-deck {
-	    display: block;
-	    width: 100%;
-	    margin-bottom: .75rem;
-	    table-layout: fixed;
-	    border-spacing: 1.25rem 0;
-	}
-	.card-deck .card {
-	    display: block;
-	    margin-bottom: .75rem;
-	}
+  .card-deck {
+    display: block;
+    width: 100%;
+    margin-bottom: .75rem;
+    table-layout: fixed;
+    border-spacing: 1.25rem 0;
+  }
+  .card-deck .card {
+    display: block;
+    margin-bottom: .75rem;
+  }
   .card-deck .card:not(:first-child) {
     margin-left: 15px;
+  }
+  h1 {
+    font-size: .8em;
   }
 }
 
@@ -44,12 +53,18 @@
   img {
     display: inline
   }
+  h1 {
+    font-size: 1em;
+  }
 }
 
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
   img {
     display: inline
+  }
+  h1 {
+    font-size: 1em;
   }
 }
 
@@ -59,7 +74,7 @@
   position: relative; /* Needed to position the cutout text in the middle of the image */
   height: 600px; /* Some height */
 }
-  
+
 .text {
   background-color: white;
   color: black;
