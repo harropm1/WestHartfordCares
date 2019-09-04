@@ -69,8 +69,8 @@ main {
     background-size: cover;
 }
 /* Turn off parallax scrolling for all tablets and phones */
-@media only screen and (max-device-width: 1200px) {
-    .slide1, .slide2, .slide3, .slide4, .slide5 {
+@media only screen and (max-device-width: 992px) {
+    .parallax {
       background-attachment: scroll;
     }
   }
