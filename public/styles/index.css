@@ -6,17 +6,12 @@
   .card-deck .card:first-child {
     margin-left: 15px;
   }
-  h1 {
-    font-size: .6em;
-  }
 }
+
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
   img {
     display: none;
-  }
-  h1 {
-    font-size: .6em;
   }
 }
 
@@ -43,9 +38,6 @@
   .card-deck .card:not(:first-child) {
     margin-left: 15px;
   }
-  h1 {
-    font-size: .8em;
-  }
 }
 
 /* Large devices (desktops, 992px and up) */
@@ -53,18 +45,12 @@
   img {
     display: inline
   }
-  h1 {
-    font-size: 1em;
-  }
 }
 
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
   img {
     display: inline
-  }
-  h1 {
-    font-size: 1em;
   }
 }
 
