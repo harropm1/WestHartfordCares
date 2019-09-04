@@ -1,6 +1,11 @@
 #backToSearch, #toTeamDetails {
     display: none;
 }
+
 table {
     margin-top: 15px;
+}
+
+h2 {
+    margin-bottom: 15px;
 }
