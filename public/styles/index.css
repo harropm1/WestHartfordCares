@@ -1,22 +1,77 @@
+/* Extra small devices (less than 576px) */
+@media (max-width: 576px) {
+  img {
+    display: none;
+   }
+   .card-deck .card:first-child {
+    margin-left: 15px;
+  }
+}
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+  img {
+   display: none;
+  }
+}
+
+/* Medium Devices - Set width to make card deck cards 100% width */
+@media (max-width: 950px) { 
+  img {
+    display: none;
+  }
+	.card-deck-wrapper {
+    margin-right:0;
+    margin-left:0;
+  }
+	.card-deck {
+	    display: block;
+	    width: 100%;
+	    margin-bottom: .75rem;
+	    table-layout: fixed;
+	    border-spacing: 1.25rem 0;
+	}
+	.card-deck .card {
+	    display: block;
+	    margin-bottom: .75rem;
+	}
+  .card-deck .card:not(:first-child) {
+    margin-left: 15px;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  img {
+    display: inline
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  img {
+    display: inline
+  }
+}
+
 .image-container {
-    background-image: url("/images/header3.jpg"); /* The image used - important! */
-    background-size: cover; 
-    position: relative; /* Needed to position the cutout text in the middle of the image */
-    height: 600px; /* Some height */
-  }
+  background-image: url("/images/header3.jpg"); /* The image used - important! */
+  background-size: cover; 
+  position: relative; /* Needed to position the cutout text in the middle of the image */
+  height: 600px; /* Some height */
+}
   
-  .text {
-    background-color: white;
-    color: black;
-    font-size: 8vw; /* Responsive font size */
-    font-weight: bold;
-    margin: 0 auto; /* Center the text container */
-    padding: 5px;
-    width: 45%;
-    text-align: center; /* Center text */
-    position: absolute; /* Position text */
-    top: 50%; /* Position text in the middle */
-    left: 50%; /* Position text in the middle */
-    transform: translate(-50%, -50%); /* Position text in the middle */
-    mix-blend-mode: screen; /* This makes the cutout text possible */
-  }
+.text {
+  background-color: white;
+  color: black;
+  font-size: 8vw; /* Responsive font size */
+  font-weight: bold;
+  margin: 0 auto; /* Center the text container */
+  padding: 5px;
+  width: 45%;
+  text-align: center; /* Center text */
+  position: absolute; /* Position text */
+  top: 50%; /* Position text in the middle */
+  left: 50%; /* Position text in the middle */
+  transform: translate(-50%, -50%); /* Position text in the middle */
+  mix-blend-mode: screen; /* This makes the cutout text possible */
+}
